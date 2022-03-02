@@ -10,12 +10,7 @@ public class MovieCollectionRunner
     // a new MovieCollection from the movies in the movies_data.csv file
     // ** USE THE CEREAL COLLECTION SAMPLE PROJECT TO HELP YOU! **
 
-    MovieCollection collection = new MovieCollection("src\\movies_data.csv");
-//    ArrayList<Movie> movieList = collection.getMovies();
-//    for (Movie movie : movieList) {
-//      System.out.println(movie);
-//    }
-
+    MovieCollection collection = new MovieCollection("src//movies_data.csv");
     collection.menu();
   }
 }

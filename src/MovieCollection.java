@@ -216,6 +216,8 @@ public class MovieCollection
         }
       }
 
+      sortResults(movieList);
+
       for (int i = 0; i < movieList.size(); i++) {
           String movieTitle = movieList.get(i).getTitle();
 
@@ -324,6 +326,36 @@ public class MovieCollection
       int choice = scanner.nextInt();
       scanner.nextLine();
 
+      ArrayList<Movie> movieList = new ArrayList<>();
+
+      for (int i = 0; i < movies.size(); i++) {
+          if (movies.get(i).getGenres().contains(results.get(choice - 1))) {
+              movieList.add(movies.get(i));
+          }
+      }
+
+      sortResults(movieList);
+
+      for (int i = 0; i < movieList.size(); i++) {
+          String movieTitle = movieList.get(i).getTitle();
+
+          int choiceNum = i + 1;
+
+          System.out.println("" + choiceNum + ". " + movieTitle);
+      }
+
+      System.out.println("Which movie would you like to learn more about?");
+      System.out.print("Enter number: ");
+
+      choice = scanner.nextInt();
+      scanner.nextLine();
+
+      Movie selectedMovie = movieList.get(choice - 1);
+
+      displayMovieInfo(selectedMovie);
+
+      System.out.println("\n ** Press Enter to Return to Main Menu **");
+      scanner.nextLine();
 
   }
   
